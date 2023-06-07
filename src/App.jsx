@@ -1,9 +1,10 @@
-import './App.css'
+import './App.css';
+import Cities from './components/Cities';
 
 function App() {
   return (
     <div className="app-container bg-slate-500 w-screen">
-      <div>Hello</div>
+      <Cities />
     </div>
   )
 }
