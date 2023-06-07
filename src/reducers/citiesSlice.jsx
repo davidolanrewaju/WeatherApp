@@ -10,6 +10,39 @@ const config = {
   },
 };
 
+const cityNames = [
+  "London",
+  "Tokyo",
+  "Lagos",
+  "Dubai",
+  "Accra",
+  "New York",
+  "Paris",
+  "Las Vegas",
+  "Berlin",
+  "Madrid",
+  "Milan",
+  "Casablanca",
+  "Cape Town",
+  "Rio de Janeiro",
+  "Kigali",
+  "Sydney",
+  "Seoul",
+  "Mumbai",
+  "Mexico City",
+  "Bangkok",
+  "Hong Kong",
+  "Nairobi",
+  "Cairo",
+  "Singapore",
+  "Barcelona",
+  "Rome",
+  "Beijing",
+  "Amsterdam",
+  "Istanbul",
+  "Buenos Aires",
+];
+
 const initialState = {
   cities: [],
   isLoading: false,
@@ -20,39 +53,6 @@ export const getCities = createAsyncThunk(
   "cities/getCities",
   async (_, thunkAPI) => {
     try {
-      const cityNames = [
-        "London",
-        "Tokyo",
-        "Lagos",
-        "Dubai",
-        "Accra",
-        "New York",
-        "Paris",
-        "Las Vegas",
-        "Berlin",
-        "Madrid",
-        "Milan",
-        "Casablanca",
-        "Cape Town",
-        "Rio de Janeiro",
-        "Kigali",
-        "Sydney",
-        "Seoul",
-        "Mumbai",
-        "Mexico City",
-        "Bangkok",
-        "Hong Kong",
-        "Nairobi",
-        "Cairo",
-        "Singapore",
-        "Barcelona",
-        "Rome",
-        "Beijing",
-        "Amsterdam",
-        "Istanbul",
-        "Buenos Aires",
-      ];
-
       const requests = cityNames.map((cityName) =>
         axios.get(`${apiUrl}?name=${cityName}`, config)
       );
@@ -60,7 +60,10 @@ export const getCities = createAsyncThunk(
       const responses = await Promise.all(requests);
 
       const cityArray = responses.map((response) =>
-        response.data.map((city) => ({ ...city }))
+        response.data.map((city) => ({
+          ...city,
+          image: `./src/assets/images/${city.name.replace(/ /g, "-")}.jpg`,
+        }))
       );
 
       const mergedCities = [].concat(...cityArray);
@@ -82,6 +85,7 @@ const citySlice = createSlice({
         state.error = null;
       })
       .addCase(getCities.fulfilled, (state, action) => {
+        console.log(action);
         state.isLoading = false;
         state.cities = action.payload;
       })

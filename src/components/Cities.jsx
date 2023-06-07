@@ -28,10 +28,31 @@ const Cities = () => {
           className="search-input"
           name="search"
         />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          className="w-5 h-5 search-icon"
+        >
+          <path
+            fillRule="evenodd"
+            d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+            clipRule="evenodd"
+          />
+        </svg>
       </div>
       <div className="cities">
         {cities.map((city) => (
-          <div className="city-lists" key={city.population}>
+          <div
+            className="city-lists"
+            key={city.population}
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${city.image})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -44,15 +65,9 @@ const Cities = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <h1 className="city-header">
-              {city.name}
-            </h1>
-            <h2 className="city-name">
-              Population
-            </h2>
-            <h4 className="city-population">
-              {city.population}
-            </h4>
+            <h1 className="city-header">{city.name}</h1>
+            <h3 className="population">Population</h3>
+            <h4 className="city-number">{city.population}</h4>
           </div>
         ))}
       </div>
