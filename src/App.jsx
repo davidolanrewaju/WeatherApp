@@ -3,7 +3,7 @@ import Cities from './components/Cities';
 
 function App() {
   return (
-    <div className="app-container bg-slate-500 w-screen">
+    <div className="app-container w-screen">
       <Cities />
     </div>
   )

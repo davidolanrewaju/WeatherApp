@@ -1,13 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const apiUrl = 'https://api.api-ninjas.com/v1/city';
+const apiUrl = "https://api.api-ninjas.com/v1/city";
 
 const config = {
   headers: {
-    'X-Api-Key': 'AGQw71XDjPFts2sQGGad8sdAfIlF4bzuUg2Wh19q',
-    'Content-Type': 'application/json',
-  }
+    "X-Api-Key": "AGQw71XDjPFts2sQGGad8sdAfIlF4bzuUg2Wh19q",
+    "Content-Type": "application/json",
+  },
 };
 
 const initialState = {
@@ -17,10 +17,41 @@ const initialState = {
 };
 
 export const getCities = createAsyncThunk(
-  'cities/getCities',
+  "cities/getCities",
   async (_, thunkAPI) => {
     try {
-      const cityNames = ['London', 'Tokyo', 'Lagos', 'Dubai'];
+      const cityNames = [
+        "London",
+        "Tokyo",
+        "Lagos",
+        "Dubai",
+        "Accra",
+        "New York",
+        "Paris",
+        "Las Vegas",
+        "Berlin",
+        "Madrid",
+        "Milan",
+        "Casablanca",
+        "Cape Town",
+        "Rio de Janeiro",
+        "Kigali",
+        "Sydney",
+        "Seoul",
+        "Mumbai",
+        "Mexico City",
+        "Bangkok",
+        "Hong Kong",
+        "Nairobi",
+        "Cairo",
+        "Singapore",
+        "Barcelona",
+        "Rome",
+        "Beijing",
+        "Amsterdam",
+        "Istanbul",
+        "Buenos Aires",
+      ];
 
       const requests = cityNames.map((cityName) =>
         axios.get(`${apiUrl}?name=${cityName}`, config)
@@ -36,16 +67,12 @@ export const getCities = createAsyncThunk(
 
       return mergedCities;
     } catch (err) {
-      return thunkAPI.rejectWithValue('Something went wrong');
+      return thunkAPI.rejectWithValue("Something went wrong");
     }
   }
 );
-
-// Example usage:
-// dispatch(getCities());
-
 const citySlice = createSlice({
-  name: 'cities',
+  name: "cities",
   initialState,
   reducers: {},
   extraReducers: (builder) => {

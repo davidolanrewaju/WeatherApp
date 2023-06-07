@@ -1,0 +1,56 @@
+.loading {
+  max-width: 70%;
+  margin: 20rem auto;
+  font-size: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.search-input {
+  padding: 15px 0 10px 1.5rem;
+  width: 100%;
+  border-radius: 30px;
+  border: 1px solid black;
+}
+
+.search-input:focus {
+  outline: none !important;
+}
+
+.search-input::placeholder {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.cities {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.arrow-icon {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.city-lists {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.city-header {
+    align-self: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 40px;
+}
