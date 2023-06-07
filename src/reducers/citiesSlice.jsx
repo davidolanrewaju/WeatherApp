@@ -1,53 +1,68 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const url = 'https://api.api-ninjas.com/v1/city?country=GH&limit=20';
-const configURL = {
-    headers: {
-        'X-Api-Key': 'AGQw71XDjPFts2sQGGad8sdAfIlF4bzuUg2Wh19q',
-        'Content-Type': 'application/json',
-    }
-}
+const apiUrl = 'https://api.api-ninjas.com/v1/city';
+
+const config = {
+  headers: {
+    'X-Api-Key': 'AGQw71XDjPFts2sQGGad8sdAfIlF4bzuUg2Wh19q',
+    'Content-Type': 'application/json',
+  }
+};
 
 const initialState = {
-    cities: [],
-    isLoading: false,
-    error: null,
-}
+  cities: [],
+  isLoading: false,
+  error: null,
+};
 
-export const getCities = createAsyncThunk('cities/getCities', async (_, thunkAPI) => {
-    try{
-        const response = await axios.get(url, configURL);
-        const cityArray = response.data.map((city) => ({
-            ...city,
-        }));
-        return cityArray;
-    } catch(err){
-        return thunkAPI.rejectWithValue('Something went wrong');
+export const getCities = createAsyncThunk(
+  'cities/getCities',
+  async (_, thunkAPI) => {
+    try {
+      const cityNames = ['London', 'Tokyo', 'Lagos', 'Dubai'];
+
+      const requests = cityNames.map((cityName) =>
+        axios.get(`${apiUrl}?name=${cityName}`, config)
+      );
+
+      const responses = await Promise.all(requests);
+
+      const cityArray = responses.map((response) =>
+        response.data.map((city) => ({ ...city }))
+      );
+
+      const mergedCities = [].concat(...cityArray);
+
+      return mergedCities;
+    } catch (err) {
+      return thunkAPI.rejectWithValue('Something went wrong');
     }
-})
+  }
+);
 
-getCities();
+// Example usage:
+// dispatch(getCities());
 
 const citySlice = createSlice({
-    name: 'cities',
-    initialState,
-    reducers: {},
-    extraReducers: (builder) => {
-        builder
-          .addCase(getCities.pending, (state) => {
-            state.isLoading = true;
-            state.error = null;
-          })
-          .addCase(getCities.fulfilled, (state, action) => {
-            state.isLoading = false;
-            state.cities = action.payload;
-          })  
-          .addCase(getCities.rejected, (state, action) => {
-            state.isLoading = false;
-            state.error = action.error.message;
-          });
-      },
-})
+  name: 'cities',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(getCities.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(getCities.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.cities = action.payload;
+      })
+      .addCase(getCities.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      });
+  },
+});
 
 export default citySlice.reducer;
