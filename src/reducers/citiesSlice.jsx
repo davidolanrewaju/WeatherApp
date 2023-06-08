@@ -85,7 +85,6 @@ const citySlice = createSlice({
         state.error = null;
       })
       .addCase(getCities.fulfilled, (state, action) => {
-        console.log(action);
         state.isLoading = false;
         state.cities = action.payload;
       })
