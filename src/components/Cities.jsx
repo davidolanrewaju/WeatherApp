@@ -13,11 +13,18 @@ const Cities = () => {
   const handleSearch = (e) => {
     const searchText = e.target.value;
     setSearch(searchText);
-    const filtered = cities.filter((city) =>
-      city.name.toLowerCase().includes(searchText.toLowerCase())
-    );
-    setFilteredCities(filtered);
   };
+
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      const filtered = cities.filter((city) =>
+        city.name.toLowerCase().includes(search.toLowerCase())
+      );
+      setFilteredCities(filtered);
+    }, 300); // Adjust the debounce delay here (in milliseconds)
+
+    return () => clearTimeout(delayDebounceFn);
+  }, [search, cities]);
 
   useEffect(() => {
     dispatch(getCities());
