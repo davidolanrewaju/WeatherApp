@@ -1,10 +1,13 @@
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Cities from './components/Cities';
 
 function App() {
   return (
-    <div className="app-container bg-slate-500 w-screen">
-      <div>Hello</div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index exact element={<Cities />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
