@@ -62,7 +62,7 @@ export const getCities = createAsyncThunk(
       const cityArray = responses.map((response) =>
         response.data.map((city) => ({
           ...city,
-          image: `./src/assets/images/${city.name.replace(/ /g, "-")}.jpg`,
+          // image: `./src/assets/images/${city.name.replace(/ /g, "-")}.jpg`,
         }))
       );
 
@@ -85,6 +85,7 @@ const citySlice = createSlice({
         state.error = null;
       })
       .addCase(getCities.fulfilled, (state, action) => {
+        console.log(action);
         state.isLoading = false;
         state.cities = action.payload;
       })

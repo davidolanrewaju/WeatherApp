@@ -1,30 +1,19 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { getCities } from "../reducers/citiesSlice";
 import "./Cities.css";
 import { ArrowIcon, SearchIcon } from "./Icons";
 
 const Cities = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { cities, isLoading } = useSelector((state) => state.cities);
   const [search, setSearch] = useState("");
-  const [filteredCities, setFilteredCities] = useState([]);
 
-  const handleSearch = (e) => {
-    const searchText = e.target.value;
-    setSearch(searchText);
-  };
-
-  useEffect(() => {
-    const delayDebounceFn = setTimeout(() => {
-      const filtered = cities.filter((city) =>
-        city.name.toLowerCase().includes(search.toLowerCase())
-      );
-      setFilteredCities(filtered);
-    }, 300); // Adjust the debounce delay here (in milliseconds)
-
-    return () => clearTimeout(delayDebounceFn);
-  }, [search, cities]);
+  const filteredData = cities.filter((city) =>
+    city.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   useEffect(() => {
     dispatch(getCities());
@@ -46,9 +35,10 @@ const Cities = () => {
             type="text"
             placeholder="Search City..."
             className="search-input"
-            name="search"
             value={search}
-            onChange={handleSearch}
+            onChange={(e) => setSearch(e.target.value)}
+            role="button"
+            tabIndex={0}
           />
         </div>
         <div className="search-icon-container">
@@ -56,7 +46,7 @@ const Cities = () => {
         </div>
       </div>
       <div className="cities">
-        {(filteredCities.length > 0 ? filteredCities : cities).map((city) => (
+        {filteredData.map((city) => (
           <div
             className="city-lists"
             key={city.population}
@@ -65,6 +55,9 @@ const Cities = () => {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
+            }}
+            onClick={() => {
+              navigate(`/weather/${city.name}`);
             }}
           >
             <ArrowIcon />
