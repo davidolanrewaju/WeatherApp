@@ -1,0 +1,160 @@
+.display-weather-container {
+  max-width: 100%;
+  padding: 3rem 0;
+}
+
+.arrow-container {
+  padding: 0 0 3rem 4rem;
+}
+
+.weather-container {
+  font-family: "Barlow", sans-serif;
+  padding: 0 4rem 4rem 4rem;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current-weather-info h2 {
+  font-size: 5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.weather-icon {
+  width: 6rem;
+}
+
+.current-info-display {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.current-info-display h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.current-info-display p {
+  font-size: 2.5rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.other-weather-info {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: center;
+}
+
+.card {
+  padding: 1.8rem 4rem 1.8rem 0.5rem;
+  background-color: rgb(221, 221, 221);
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.card-info h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: grey;
+  margin-bottom: 5px;
+}
+
+.card-info p {
+  font-size: 20px;
+  font-weight: 700;
+  color: #5e5e5e;
+}
+
+/* Responsive Styles */
+
+@media only screen and (max-width: 768px) {
+  .weather-container {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .current-weather-info {
+    text-align: center;
+  }
+
+  .current-info-display {
+    align-items: center;
+  }
+
+  .other-weather-info {
+    margin-top: 2rem;
+  }
+
+  .current-weather-info h2 {
+    font-size: 4rem;
+  }
+
+  .weather-icon {
+    width: 5rem;
+  }
+
+  .current-info-display h2,
+  .current-info-display p {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card-info h2 {
+    font-size: 14px;
+  }
+
+  .card-info p {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .weather-container {
+    padding: 0 0.5rem;
+  }
+
+  .current-weather-info h2 {
+    font-size: 3.5rem;
+  }
+
+  .weather-icon {
+    width: 4rem;
+  }
+
+  .current-info-display h2,
+  .current-info-display p {
+    font-size: 1.8rem;
+  }
+
+  .other-weather-info {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .card {
+    padding: 0.8rem;
+  }
+
+  .card-info h2 {
+    font-size: 12px;
+  }
+
+  .card-info p {
+    font-size: 16px;
+  }
+}
