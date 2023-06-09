@@ -16,8 +16,7 @@
   - [Run tests](#run-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
-<!-- - [🔭 Future Features](#future-features) -->
-<!-- - [🎥 Video Summary](#video-summary) -->
+- [🎥 Video Summary](#video-summary)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -25,10 +24,17 @@
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
-
 # 🚀 WeatherApp <a name="about-project"></a>
 
 **WeatherApp** is an app that displays the weaather of a chosen city amongst a list of displayed city. It was created using React/Redux.
+
+![Screenshot (40)](https://github.com/davidolanrewaju/WeatherApp/assets/63909901/7482e87d-4a66-4f5b-8aeb-1eb40e7415f5)
+
+![Screenshot (41)](https://github.com/davidolanrewaju/WeatherApp/assets/63909901/432b4f19-4698-4a60-af93-65ec99a828a9)
+
+![Screenshot (42)](https://github.com/davidolanrewaju/WeatherApp/assets/63909901/5a27dedd-4bb1-4eea-8c42-a9f3519e6162)
+
+![Screenshot (43)](https://github.com/davidolanrewaju/WeatherApp/assets/63909901/0e174237-7dbf-4b2f-8b5a-208221532a98)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -58,7 +64,7 @@
 
 <!-- LIVE DEMO -->
 ### 🚀 Live Demo <a name="live-demo"></a>
-- [Live Demo Link]()
+- [Live Demo Link](https://weatherapp-io.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
