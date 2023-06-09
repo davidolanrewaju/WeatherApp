@@ -1,7 +1,7 @@
 import "../styles/displayForecast.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getForecast } from "../reducers/forecastSlice";
+import { getForecast } from "../reducers/forecast/forecastSlice";
 
 const DisplayForecast = () => {
   const dispatch = useDispatch();

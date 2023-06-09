@@ -2,10 +2,10 @@ import '../styles/cities.css';
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getCities } from "../reducers/citiesSlice";
-import { getWeather } from "../reducers/weatherSlice";
+import { getCities } from '../reducers/cities/citiesSlice';
+import { getWeather } from "../reducers/weather/weatherSlice";
 import { ArrowIcon, SearchIcon } from "./Icons";
-import { getForecast } from '../reducers/forecastSlice';
+import { getForecast } from '../reducers/forecast/forecastSlice';
 
 const Cities = () => {
   const navigate = useNavigate();

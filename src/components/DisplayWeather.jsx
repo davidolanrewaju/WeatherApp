@@ -1,7 +1,7 @@
 import "../styles/displayWeather.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getWeather } from "../reducers/weatherSlice";
+import { getWeather } from "../reducers/weather/weatherSlice";
 import { WiCloudyGusts, WiCloudyWindy, WiHumidity } from "react-icons/wi";
 import DisplayForecast from "./DisplayForecast";
 import { BackArrow } from "./Icons";
