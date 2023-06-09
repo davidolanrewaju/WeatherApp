@@ -16,7 +16,7 @@ export const getWeather = createAsyncThunk(
     const response = await axios.get(weatherUrl);
 
     const filename = response.data.name.replace(/ /g, "-");
-    const imgPath = `./src/assets/images/${filename}.jpg`;
+    const imgPath = `/${filename}.jpg`;
     response.data.img = imgPath;
 
     return response.data;
