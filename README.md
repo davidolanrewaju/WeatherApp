@@ -131,7 +131,7 @@ To run tests, run the following command:
 <!-- VIDEO SUMMARY -->
 ## 🎥 Video Summary <a name="video-summary"></a>
 >This is a video summary on the aim of this project and the challenges encountered.</br>
-Click [this link](https://www.loom.com/share/f02739603fca4d7c83ee79ed7d6c995a) to get a view of the project
+Click [this link](https://www.loom.com/share/b5519ed9c54548ffa6b24d193c3183cc) to get a brief idea of the project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
