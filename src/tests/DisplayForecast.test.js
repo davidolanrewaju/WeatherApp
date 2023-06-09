@@ -1,3 +1,4 @@
+import { test, expect } from '@jest/globals';
 import '@testing-library/jest-dom';
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
@@ -26,7 +27,7 @@ test("renders forecast correctly", () => {
     },
   });
 
-  const { getByText, getByAltText } = render(
+  const { getByText } = render(
     <Provider store={store}>
       <DisplayForecast />
     </Provider>
