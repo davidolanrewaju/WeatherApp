@@ -157,7 +157,7 @@ If you like this project hit the like button and also hit me up if you need a co
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank microverse for the resources provided to make this project possible.
+I would like to acknowledge [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) the [author of the original design](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)) for the design inspiration. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
