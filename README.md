@@ -28,9 +28,9 @@
 
 **WeatherApp** is an app that displays the weaather of a chosen city amongst a list of displayed city. It was created using React/Redux.
 
-![Screenshot (40)](https://github.com/davidolanrewaju/WeatherApp/assets/63909901/7482e87d-4a66-4f5b-8aeb-1eb40e7415f5)
-
 ![Screenshot (41)](https://github.com/davidolanrewaju/WeatherApp/assets/63909901/432b4f19-4698-4a60-af93-65ec99a828a9)
+
+![Screenshot (40)](https://github.com/davidolanrewaju/WeatherApp/assets/63909901/7482e87d-4a66-4f5b-8aeb-1eb40e7415f5)
 
 ![Screenshot (42)](https://github.com/davidolanrewaju/WeatherApp/assets/63909901/5a27dedd-4bb1-4eea-8c42-a9f3519e6162)
 
