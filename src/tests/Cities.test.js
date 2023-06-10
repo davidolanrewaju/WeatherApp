@@ -6,8 +6,6 @@ import { MemoryRouter } from "react-router-dom";
 import Cities from "../components/Cities";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "../reducers/cities/citiesSlice";
-import { getWeather } from "../reducers/weather/weatherSlice";
-import { getForecast } from "../reducers/forecast/forecastSlice";
 
 test("renders cities correctly", () => {
   const mockCities = [
