@@ -5,10 +5,7 @@ import { getForecast } from "../reducers/forecast/forecastSlice";
 
 const DisplayForecast = () => {
   const dispatch = useDispatch();
-  const { forecast, isLoading } = useSelector((state) => {
-    console.log(state);
-    return state.forecast;
-  });
+  const { forecast, isLoading } = useSelector((state) => state.forecast);
 
   useEffect(() => {
     dispatch(getForecast());

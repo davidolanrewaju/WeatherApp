@@ -27,3 +27,25 @@ test("displays loading message when weather data is loading", () => {
 
   expect(getByText("Loading...")).toBeInTheDocument();
 });
+
+test("displays loading message when weather data is not available", () => {
+  const store = configureStore({
+    reducer: rootReducer,
+    preloadedState: {
+      weather: {
+        isLoading: false,
+        weather: null,
+      },
+    },
+  });
+
+  const { getByText } = render(
+    <Provider store={store}>
+      <Router>
+        <DisplayWeather />
+      </Router>
+    </Provider>
+  );
+
+  expect(getByText("Loading...")).toBeInTheDocument();
+});

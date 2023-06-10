@@ -35,3 +35,25 @@ test("renders forecast correctly", () => {
 
   expect(getByText("3-Hour Weather Forecast")).toBeInTheDocument();
 });
+
+test("displays loading message when isLoading is true", () => {
+  const mockForecast = {
+    list: [],
+    isLoading: true,
+  };
+
+  const store = configureStore({
+    reducer: rootReducer,
+    preloadedState: {
+      forecast: mockForecast,
+    },
+  });
+
+  const { getByText } = render(
+    <Provider store={store}>
+      <DisplayForecast />
+    </Provider>
+  );
+
+  expect(getByText("Loading...")).toBeInTheDocument();
+});

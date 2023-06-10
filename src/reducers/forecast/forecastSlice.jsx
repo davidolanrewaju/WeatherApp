@@ -14,7 +14,6 @@ export const getForecast = createAsyncThunk(
   async ({ latitude, longitude }) => {
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     const response = await axios.get(forecastUrl);
-    console.log(response.data);
     return response.data;
   }
 );
@@ -30,7 +29,6 @@ const forecastSlice = createSlice({
         state.error = null;
       })
       .addCase(getForecast.fulfilled, (state, action) => {
-        console.log(action);
         state.isLoading = false;
         state.forecast = action.payload;
       })
