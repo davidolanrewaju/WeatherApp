@@ -1,0 +1,33 @@
+.navbar-container {
+  background-color: rgb(38, 29, 44);
+  padding: 0.5rem 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: static;
+  max-width: 100%;
+}
+
+.logo-container {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-container h2 {
+  font-size: 18px;
+}
+
+.icon-set {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icons {
+  color: white;
+  width: 20px;
+}
